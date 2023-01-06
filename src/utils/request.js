@@ -1,0 +1,16 @@
+import axios from 'axios';
+import { Spin } from '@douyinfe/semi-ui';
+const request = () => {
+  axios.create({
+    baseURL: 'http://localhost:4000/',
+    timeout: 30000,
+  })
+}
+
+// 请求拦截器
+request.interceptors.request.use((config) => config, (err) => Promise.reject(err))
+
+// 响应拦截器
+request.interceptors.response.use((res) => res.data, (err) => Promise.reject(err))
+
+export default request
