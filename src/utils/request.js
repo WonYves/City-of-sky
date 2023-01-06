@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { Spin } from '@douyinfe/semi-ui';
 const request = () => {
   axios.create({
     baseURL: 'http://localhost:4000/',

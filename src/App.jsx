@@ -1,8 +1,12 @@
 import React, { Fragment, useState } from 'react'
-import Layout from './view/layout'
+import renderRoutes from './router/routes'
+import routes from './router/index'
+import { Switch } from 'react-router-dom'
 const App = () => (
   <Fragment>
-    <Layout></Layout>
+    <Switch>
+      {renderRoutes(routes)}
+    </Switch>
   </Fragment>
 )
 
