@@ -7,13 +7,13 @@ dns.setDefaultResultOrder('verbatim')
 export default defineConfig({
   plugins: [react()],
   // mode : 'development',  // 开发环境
-  mode : 'production',  // 生产环境
+  mode: 'production',  // 生产环境
 
   // webpack的入口
   // entry: './src/index.js',
-  server:{   // 开发服务器配置
+  server: {   // 开发服务器配置
     open: true,  // 启动时默认打开浏览器
-    port: 8888  // 启动的端口号
+    port: 8888,  // 启动的端口号
   },
   // 加载器
   module: {
@@ -22,8 +22,8 @@ export default defineConfig({
       {
         test: /\.css$/i,
         use: [
-          "style-loader",
-          "css-loader"],
+          'style-loader',
+          'css-loader'],
       },
       // 处理less
       {
@@ -37,16 +37,16 @@ export default defineConfig({
       // 处理图片
       {
         test: /\.(png|jpg|gif|jpeg)$/i, // 匹配图片文件
-        type: 'asset' // 在导出一个 data URI 和一个单独的文件之间自动选择
+        type: 'asset', // 在导出一个 data URI 和一个单独的文件之间自动选择
       },
       // 识别字体文件
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         type: 'asset/resource',  // 当做静态资源直接复制文件
-        generator: { 
-          filename: 'font/[name].[hash:6][ext]' // 放到dist/font文件夹, 文件名格式如左
-        }
-      }, 
+        generator: {
+          filename: 'font/[name].[hash:6][ext]', // 放到dist/font文件夹, 文件名格式如左
+        },
+      },
       // babel处理高等级的js语法
       {
         test: /\.m?js$/, // 匹配.mjs或者.js结尾文件
@@ -55,10 +55,10 @@ export default defineConfig({
         use: {
           loader: 'babel-loader', // 允许webpack使用babel降级js代码
           options: {
-            presets: ['@babel/preset-env'] // 使用这个包里记录的规则
-          }
-        }
-      }
+            presets: ['@babel/preset-env'], // 使用这个包里记录的规则
+          },
+        },
+      },
     ],
   },
 })
