@@ -11,8 +11,18 @@ const routes = [
     children: [
       {
         path: '/home',
-        exact: true,
         component: lazy(() => import('../view/home')),
+      },
+      {
+        path: '/cc',
+        component: lazy(() => import('../view/cc')),
+        children: [
+          {
+            path: '/cc/ttt',
+            exact: true,
+            component: lazy(() => import('../view/cc/ttt')),
+          },
+        ],
       },
     ],
   },
