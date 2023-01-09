@@ -1,16 +1,14 @@
 import React, { Fragment, useState } from 'react';
-import renderRoutes from '../../router/routes'
 
-
-const Cc = (props) => {
+const Header = () => {
 
   const [data, setData] = useState([])
 
   return (
     <Fragment>
-      {renderRoutes(props.route.children)}
+      <div>Header</div>
     </Fragment>
   )
 }
 
-export default Cc
+export default Header
