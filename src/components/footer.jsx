@@ -6,7 +6,7 @@ const Footer = () => {
 
   return (
     <Fragment>
-      <div>Footer</div>
+      <div>Foor</div>
     </Fragment>
   )
 }
