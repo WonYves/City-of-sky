@@ -19,6 +19,21 @@ const routes = [
             path: '/home/personality',
             component: lazy(() => import('../view/home/personality')),
           },
+          {
+            // 歌单
+            path: '/home/songsheet',
+            component: lazy(() => import('../view/home/songsheet')),
+          },
+          {
+            // 排行榜
+            path: '/home/rankinglist',
+            component: lazy(() => import('../view/home/rankinglist')),
+          },
+          {
+            // 最新音乐
+            path: '/home/latestmusic',
+            component: lazy(() => import('../view/home/latestmusic')),
+          },
         ],
       },
       {
