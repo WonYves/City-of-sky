@@ -67,11 +67,11 @@ const Menu = (props) => {
   return (
     <Fragment>
       <main>
-        <ul>
+        <ul className='main_ul'>
           {
             menulist.map((item, index) =>
 
-              <li key={item.id}
+              <li  key={item.id}
                 onClick={() => handlePush(item, index)}
                 className={count === index ? 'active' : ''}
               >
