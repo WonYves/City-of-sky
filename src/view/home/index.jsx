@@ -34,7 +34,7 @@ const Home = (props) => {
   const getdata = useCallback(async(params) => {
     const res = await getpersonality(params)
     if (res.code === 200) {
-      console.log(res);
+      // console.log(res);
     }
   }, [])
 
