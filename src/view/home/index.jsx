@@ -58,7 +58,7 @@ const Home = (props) => {
 
   return (
     <Fragment>
-      <div style={{ padding: 20 }}>
+      <div style={{ padding: 20, width: '100%', height: '100%' }}>
         <header>
           <ul className='ul_list'>
             {
@@ -72,7 +72,7 @@ const Home = (props) => {
             }
           </ul>
         </header>
-        {renderRoutes(props.route.children)}
+        <div style={{position: 'relative'}}>{renderRoutes(props.route.children)}</div>
       </div>
     </Fragment>
   )

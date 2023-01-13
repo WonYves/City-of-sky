@@ -21,7 +21,7 @@ const LayoutH = (props) => {
     <Fragment>
       <Layout className="components-layout-demo">
         <Header className='header'>Header</Header>
-        <Layout>
+        <Layout style={{height: '80vh', overflow: 'auto'}}>
           <Sider className='sider'>
             <Menu />
           </Sider>
