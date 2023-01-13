@@ -1,6 +1,9 @@
 import React, { Fragment, useCallback, useEffect, useState } from 'react';
 import './personality.less'
-import { getbanner } from '../../../api/home'
+import {
+  getbanner,
+  personalized,
+} from '../../../api/home'
 import { Carousel, RadioGroup, Radio, Space, Typography } from '@douyinfe/semi-ui';
 
 const imgList2 = [
@@ -11,13 +14,14 @@ const imgList2 = [
 const Personality = () => {
 
   const [imgList, setImgList] = useState([])
+  const [mcdata, setMcdata] = useState([])
 
   const style = {
     width: '1000px',
     height: '300px',
   };
 
-
+  // 轮播图
   const getImg = useCallback(async(params) => {
     const res = await getbanner(params)
     if (res.code === 200) {
@@ -25,8 +29,18 @@ const Personality = () => {
     }
   }, [])
 
+  // 歌单
+  const getMcdata = useCallback(async(params) => {
+    const res = await personalized(params)
+    if (res.code === 200) {
+      console.log(res);
+      setMcdata(res.result)
+    }
+  }, [])
+
   useEffect(() => {
     getImg()
+    getMcdata({limit: 10})
   }, [])
 
   return (
@@ -45,6 +59,16 @@ const Personality = () => {
           </header>
           <div style={{marginTop: 40}}>
             <div style={{ fontSize: 25}}>推荐歌单</div>
+            <ul className='Recommendedsonglist'>
+              {
+                mcdata.map((item, index) => (
+                  <li key={item.id} >
+                    <div style={{background: `url(${item.picUrl})`, backgroundSize: '100% 100%'}}></div>
+                    <p>{item.name}</p>
+                  </li>
+                ))
+              }
+            </ul>
           </div>
         </div>
       </div>

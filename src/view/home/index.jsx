@@ -58,7 +58,7 @@ const Home = (props) => {
 
   return (
     <Fragment>
-      <div style={{ padding: 20, width: '100%', height: '100%' }}>
+      <div className='perbox'>
         <header>
           <ul className='ul_list'>
             {

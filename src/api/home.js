@@ -13,3 +13,10 @@ export const getbanner = (params) => request({
   method: 'get',
   params,
 })
+
+// 推荐歌单
+export const personalized = (params) => request({
+  url: '/personalized',
+  method: 'get',
+  params,
+})
