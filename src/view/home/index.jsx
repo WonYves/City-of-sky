@@ -1,7 +1,6 @@
 import React, { Fragment, useCallback, useEffect, useState } from 'react';
 import renderRoutes from '../../router/routes';
 import './index.less'
-import { getpersonality } from '../../api/home'
 import { useHistory } from 'react-router-dom';
 const Home = (props) => {
 
@@ -30,17 +29,6 @@ const Home = (props) => {
       path: '/home/latestmusic',
     },
   ]
-  // 轮播图
-  const getdata = useCallback(async(params) => {
-    const res = await getpersonality(params)
-    if (res.code === 200) {
-      // console.log(res);
-    }
-  }, [])
-
-  useEffect(() => {
-    getdata()
-  }, [])
 
   useEffect(() => {
     if (props.location.pathname === '/home') {
