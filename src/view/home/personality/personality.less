@@ -68,11 +68,29 @@
       width: 20%;
       border-radius: 10px;
       margin-right: 10px;
+      position: relative;
+      .iconplaycle{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%)  scale(1.5);
+        color: pink;
+      }
+    }
+    div:hover{
+      cursor: pointer;
     }
     p{
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      .todete{
+        font-family: '-moz-initial';
+        font-size: 14px;
+      }
+      .todete:hover{
+        cursor: pointer;
+      }
     }
   }
 }

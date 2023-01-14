@@ -7,7 +7,7 @@ import {
   getlastMc,
 } from '../../../api/home'
 import { Carousel, RadioGroup, Radio, Space, Typography } from '@douyinfe/semi-ui';
-
+import Icon, { IconPlayCircle } from '@douyinfe/semi-icons';
 const Personality = () => {
 
   const [imgList, setImgList] = useState([])
@@ -65,9 +65,13 @@ const Personality = () => {
         <div className='app_main'>
           <header className='banner'>
             {
-              imgList.length &&  <Carousel style={style} autoPlay={{ interval: 1500, hoverToPause: true}} theme='dark'>
+              imgList.length &&  <Carousel style={style}
+                indicatorType='columnar'
+                indicatorPosition='right'
+                indicatorSize='medium'
+                autoPlay={{ interval: 2000, hoverToPause: true}} theme='light'>
                 {
-                  imgList.map((v, i) => <div key={i} style={{ background: `url(${v.imageUrl})`, backgroundSize: '100% 100%' }}></div>)
+                  imgList.map((v, i) => <div key={i} style={{ borderRadius: '20px', background: `url(${v.imageUrl})`, backgroundSize: '100% 100%' }}></div>)
                 }
               </Carousel>
             }
@@ -92,10 +96,12 @@ const Personality = () => {
               {
                 newMc.map((item, index) => (
                   <li key={index}>
-                    <div style={{background: `url(${item.picUrl})`, backgroundSize: '100% 100%'}}></div>
+                    <div style={{background: `url(${item.picUrl})`, backgroundSize: '100% 100%'}}>
+                      <IconPlayCircle className='iconplaycle' size='extra-large' />
+                    </div>
                     <p>
                       <span>{item.name}</span>
-                      <span style={{fontFamily: '-moz-initial'}}>{item.song.artists[0].name}</span>
+                      <span className='todete' >{item.song.artists[0].name}</span>
                     </p>
                   </li>
                 ))
