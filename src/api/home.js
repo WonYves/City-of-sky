@@ -1,8 +1,8 @@
 import request from '../utils/request';
 
-//
-export const getpersonality = (params) => request({
-  url: '/dj/personalize/recommend',
+// 最新音乐
+export const getlastMc = (params) => request({
+  url: '/personalized/newsong',
   method: 'get',
   params,
 })
@@ -17,6 +17,12 @@ export const getbanner = (params) => request({
 // 推荐歌单
 export const personalized = (params) => request({
   url: '/personalized',
+  method: 'get',
+  params,
+})
+// 推荐mv
+export const getmvlist = (params) => request({
+  url: '/personalized/mv',
   method: 'get',
   params,
 })
