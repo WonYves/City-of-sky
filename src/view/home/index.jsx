@@ -1,4 +1,4 @@
-import React, { Fragment, useCallback, useEffect, useState } from 'react';
+import React, { Fragment, useCallback, useEffect, useState, useRef } from 'react';
 import renderRoutes from '../../router/routes';
 import './index.less'
 import { useHistory } from 'react-router-dom';
@@ -6,6 +6,7 @@ const Home = (props) => {
 
   const history = useHistory()
   const [count, setCount] = useState(0)
+  let perdom = useRef()
 
   const ulList = [
     {
@@ -34,6 +35,7 @@ const Home = (props) => {
     if (props.location.pathname === '/home') {
       history.push('/home/personality')
     }
+    // console.log(perdom.current.clientHeight);
   }, [])
 
   const handlePush = (index, item) => {
@@ -47,7 +49,7 @@ const Home = (props) => {
   return (
     <Fragment>
       <div className='perbox'>
-        <header>
+        <header className='header_box'>
           <ul className='ul_list'>
             {
               ulList.map((item, index) => (
@@ -60,7 +62,9 @@ const Home = (props) => {
             }
           </ul>
         </header>
-        <div style={{position: 'relative'}}>{renderRoutes(props.route.children)}</div>
+        <div className='perbox_content'>
+          <div style={{position: 'relative'}}>{renderRoutes(props.route.children)}</div>
+        </div>
       </div>
     </Fragment>
   )

@@ -7,7 +7,7 @@ import {
   getlastMc,
 } from '../../../api/home'
 import { Carousel, RadioGroup, Radio, Space, Typography } from '@douyinfe/semi-ui';
-import Icon, { IconPlayCircle } from '@douyinfe/semi-icons';
+import Icon, { IconPlayCircle, IconMusic, IconPulse } from '@douyinfe/semi-icons';
 const Personality = () => {
 
   const [imgList, setImgList] = useState([])
@@ -48,7 +48,7 @@ const Personality = () => {
   const mvlist = useCallback(async(params) => {
     const res = await getmvlist(params)
     if (res.code === 200) {
-      setMvdata((res.result).slice(1, 4))
+      setMvdata((res.result).slice(0, 3))
     }
   }, [])
 
@@ -83,7 +83,9 @@ const Personality = () => {
               {
                 mcdata.map((item, index) => (
                   <li key={item.id} >
-                    <div style={{background: `url(${item.picUrl})`, backgroundSize: '100% 100%'}}></div>
+                    <div style={{background: `url(${item.picUrl})`, backgroundSize: '100% 100%'}}>
+                      <IconPulse className='iconMc' size='extra-large' />
+                    </div>
                     <p>{item.name}</p>
                   </li>
                 ))
@@ -108,7 +110,7 @@ const Personality = () => {
               }
             </ul>
           </div>
-          <div style={{marginTop: 40, marginBottom: 40}}>
+          <div style={{marginTop: 40, marginBottom: 20}}>
             <div style={{ fontSize: 25}}>推荐MV</div>
             <ul className='mvlist'>
               {
@@ -122,6 +124,9 @@ const Personality = () => {
               }
             </ul>
           </div>
+
+          <div style={{height: 20}}></div>
+          <div></div>
         </div>
       </div>
     </Fragment>

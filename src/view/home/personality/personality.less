@@ -21,6 +21,21 @@
       height: 210px;
       border-radius: 10px;
       margin-bottom: 5px;
+      position: relative;
+    }
+    div:hover{
+      .iconMc{
+        display: block;
+      }
+      cursor: pointer;
+    }
+    .iconMc{
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      color: pink;
+      transform: translate(-50%,-50%)  scale(1.5);
+      display: none;
     }
     p{
       white-space: nowrap;
@@ -44,6 +59,9 @@
       height: 210px;
       border-radius: 10px;
       margin-bottom: 5px;
+    }
+    div:hover{
+      cursor: pointer;
     }
     p{
       white-space: nowrap;
