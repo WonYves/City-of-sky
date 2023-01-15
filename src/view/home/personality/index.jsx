@@ -82,7 +82,7 @@ const Personality = () => {
             <ul className='Recommendedsonglist'>
               {
                 mcdata.map((item, index) => (
-                  <li key={item.id} >
+                  <li key={index} >
                     <div style={{background: `url(${item.picUrl})`, backgroundSize: '100% 100%'}}>
                       <IconPulse className='iconMc' size='extra-large' />
                     </div>
@@ -115,7 +115,7 @@ const Personality = () => {
             <ul className='mvlist'>
               {
                 mvdata.map((item, index) => (
-                  <li key={item.artistId} >
+                  <li key={index} >
                     <div style={{background: `url(${item.picUrl})`, backgroundSize: '100% 100%'}}></div>
                     <p>{item.name}</p>
                     <p style={{fontSize: 12, marginTop: 3, fontFamily: '-moz-initial'}}>{item.artistName}</p>
