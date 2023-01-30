@@ -50,7 +50,7 @@ const Header = () => {
           </Select>
         </div>
         <div className='right_header'>
-          <Image className='headportrait' src={'../assets/image/网易云音乐.png'}></Image>WonYves
+          <Image className='headportrait' src={'../assets/image/网易云音乐.png'}></Image>WonYve
         </div>
       </div>
     </Fragment>
