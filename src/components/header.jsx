@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useCallback, useEffect } from 'react';
-import { Input, Select  } from '@douyinfe/semi-ui';
+import { Input, Select, Image  } from '@douyinfe/semi-ui';
 import { IconSearch } from '@douyinfe/semi-icons';
 import { useHistory } from 'react-router-dom';
 import {
@@ -48,6 +48,9 @@ const Header = () => {
             onSearch={onSearch}
           >
           </Select>
+        </div>
+        <div className='right_header'>
+          <Image className='headportrait' src={'../assets/image/网易云音乐.png'}></Image>WonYves
         </div>
       </div>
     </Fragment>
