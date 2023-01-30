@@ -23,7 +23,7 @@ const LayoutH = (props) => {
     if (babyref.current.style.top !== '0px') {
       babyref.current.style.top =  0
     } else if (babyref.current.style.top == '0px') {
-      babyref.current.style.top = '88vh'
+      babyref.current.style.top = '100vh'
     }
   }
 

@@ -17,6 +17,13 @@ const Menu = (props) => {
     })
   }, [])
 
+  // 点击title标题 高亮返回
+  useEffect(() => {
+    if (window.location.pathname === '/home/personality') {
+      setCount(0)
+    }
+  }, [window.location.pathname])
+
   // 导航栏路由跳转
   const handlePush = (item, index) => {
     setCount(index)
@@ -44,12 +51,6 @@ const Menu = (props) => {
       icon: <IconLive size='small' />,
     },
     {
-      title: '关注',
-      id: 4,
-      path: '/home',
-      icon: <IconSong size='small'/>,
-    },
-    {
       title: '直播',
       id: 5,
       path: '/home',
@@ -58,7 +59,7 @@ const Menu = (props) => {
     {
       title: '私人FM',
       id: 6,
-      path: '/home',
+      // path: '/home',
       icon: <IconBolt size='small' />,
     },
   ]
