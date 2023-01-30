@@ -4,6 +4,7 @@ import './index.less'
 import renderRoutes from '../router/routes'
 import { Redirect, useHistory } from 'react-router-dom';
 import Menu from '../components/menu';
+import Head from '../components/header';
 const LayoutH = (props) => {
 
   const history = useHistory()
@@ -30,7 +31,9 @@ const LayoutH = (props) => {
   return (
     <Fragment>
       <Layout className="components-layout-demo">
-        <Header className='header'>Header</Header>
+        <Header className='header'>
+          <Head></Head>
+        </Header>
         <Layout style={{height: '80vh', overflow: 'auto'}}>
           <Sider className='sider'>
             <Menu />
