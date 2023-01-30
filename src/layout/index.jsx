@@ -15,12 +15,11 @@ const LayoutH = (props) => {
   // 此处也可以用 Redirect 重新定向
   useEffect(() =>   {
     if (props.location.pathname === '/') {
-      history.push('/home')
+      history.push('/home/personality')
     }
   }, [])
 
   const handleBaby = () => {
-    console.log(babyref.current.style.top)
     if (babyref.current.style.top !== '0px') {
       babyref.current.style.top =  0
     } else if (babyref.current.style.top == '0px') {

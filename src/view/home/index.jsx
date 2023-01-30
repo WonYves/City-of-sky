@@ -34,9 +34,10 @@ const Home = (props) => {
   useEffect(() => {
     if (props.location.pathname === '/home') {
       history.push('/home/personality')
+      setCount(0)
     }
     // console.log(perdom.current.clientHeight);
-  }, [])
+  }, [props])
 
   const handlePush = (index, item) => {
     setCount(index)
