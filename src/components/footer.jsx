@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useContext } from 'react';
-import { Button, Layout, Slider  } from '@douyinfe/semi-ui';
+import { Button, Layout, Slider, Progress   } from '@douyinfe/semi-ui';
 import Icon, { IconSort, IconPause, IconPlay, IconFastForward, IconBackward, IconSetting } from '@douyinfe/semi-icons';
 import './footer.less'
 const Footer = (props) => {
@@ -44,12 +44,9 @@ const Footer = (props) => {
               <IconFastForward className='ii' />
             </div>
             <div className='sliderbox'>
-              <Slider
-                className='skuderstyle'
-                max={500}
-                min={0}
-                // marks={{ 20: '20°C', 40: '40°C' }}
-              ></Slider>
+              <Progress
+                size='large'
+              />
             </div>
           </div>
         </div>
