@@ -1,12 +1,11 @@
 import React, { Fragment, useState, useCallback, useEffect, useRef } from 'react';
-import { Input, Select, Image  } from '@douyinfe/semi-ui';
+import { Select, Image  } from '@douyinfe/semi-ui';
 import { IconSearch } from '@douyinfe/semi-icons';
 import { useHistory } from 'react-router-dom';
 import {
   getSerach,
 } from '../api/header'
 import './header.less'
-import useDebounce from '../utils/useDebounce';
 const Header = () => {
 
 
@@ -50,9 +49,9 @@ const Header = () => {
         </div>
         <div className='inputHead'>
           <Select
+            className='selectui'
             prefix={<IconSearch />}
             showClear
-            style={{width: 200}}
             onSearch={onSearch}
             filter
           >
