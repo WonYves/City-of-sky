@@ -6,6 +6,7 @@ import {
   getSerach,
 } from '../api/header'
 import './header.less'
+import useDebounce from '../utils/useDebounce';
 const Header = () => {
 
   const history = useHistory()
@@ -46,6 +47,7 @@ const Header = () => {
             showClear
             style={{width: 200}}
             onSearch={onSearch}
+            filter
           >
           </Select>
         </div>

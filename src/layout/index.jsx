@@ -33,7 +33,7 @@ const LayoutH = (props) => {
         <Header className='header'>
           <Head></Head>
         </Header>
-        <Layout style={{height: '80vh', overflow: 'auto'}}>
+        <Layout style={{height: '82vh', overflow: 'auto'}}>
           <Sider className='sider'>
             <Menu />
           </Sider>
