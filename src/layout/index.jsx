@@ -1,10 +1,12 @@
-import React, { Fragment, useEffect, useState, useRef } from 'react';
+import React, { Fragment, useEffect, useState, useRef, createContext } from 'react';
 import { Button, Layout } from '@douyinfe/semi-ui';
 import './index.less'
 import renderRoutes from '../router/routes'
 import { Redirect, useHistory } from 'react-router-dom';
 import Menu from '../components/menu';
 import Head from '../components/header';
+import Foot from '../components/footer';
+import Lyric from '../view/lyric'
 const LayoutH = (props) => {
 
   const history = useHistory()
@@ -41,9 +43,11 @@ const LayoutH = (props) => {
             {renderRoutes(props.route.children)}
           </Content>
         </Layout>
-        <div ref={babyref} className={'mcdate'}></div>
+        <div ref={babyref} className='mcdate'>
+          <Lyric></Lyric>
+        </div>
         <Footer className='footer'>
-          <Button onClick={handleBaby}>111</Button>
+          <Foot handleBaby={handleBaby}></Foot>
         </Footer>
       </Layout>
     </Fragment>

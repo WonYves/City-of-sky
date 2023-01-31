@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useCallback, useEffect } from 'react';
+import React, { Fragment, useState, useCallback, useEffect, useRef } from 'react';
 import { Input, Select, Image  } from '@douyinfe/semi-ui';
 import { IconSearch } from '@douyinfe/semi-icons';
 import { useHistory } from 'react-router-dom';
@@ -9,6 +9,8 @@ import './header.less'
 import useDebounce from '../utils/useDebounce';
 const Header = () => {
 
+
+  const de = useRef(0)
   const history = useHistory()
   const [data, setData] = useState([])
 
@@ -20,17 +22,22 @@ const Header = () => {
     }
   }, [])
 
-  useEffect(() => {
-    // getData({keywords: '周杰伦'})
-  }, [])
 
   const handleHome = () => {
     history.push('/home/personality')
   }
 
-  const onSearch = (value) => {
-    console.log(value);
-  }
+  // 简易版防抖
+  const onSearch = useCallback((value) => {
+    if (!value) {return}
+    if (de.current) {
+      clearTimeout(de.current)
+    }
+    de.current = setTimeout(() => {
+      // getData({keywords: value})
+      console.log(de.current);
+    }, 800)
+  }, [])
 
   return (
     <Fragment>
@@ -52,7 +59,7 @@ const Header = () => {
           </Select>
         </div>
         <div className='right_header'>
-          <Image className='headportrait' src={'../assets/image/网易云音乐.png'}></Image>WonYves
+          <Image className='headportrait' ></Image>WonYves
         </div>
       </div>
     </Fragment>
