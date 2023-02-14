@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 // 1.2 rotes匹配的路由作为参数传递
 const renderRoutes = (routes) => (
   // console.log(routes) => []
-  // 1.3 判断routes数组 为家返回null，存在则变量数组
+  // 1.3 判断routes数组 为假返回null，存在则变量数组
   routes ? (
     <Suspense fallback={<div>loading...</div>}>
       <Switch>
